@@ -17,7 +17,7 @@ public:
         return description;
     }
 
-    void setDescription(std::string& d){
+    void setDescription(std::string& d) const{
         description = d;
     }
 
@@ -25,15 +25,15 @@ public:
         return start;
     }
 
-    void setStart(Time& s){
+    void setStart(Time& s) const{
         start = s;
     }
 
-    const Time getDuration() const{
-        return end - start;
+    Time getDuration() const{ //FIXME aggiungere const
+        return end-start;
     }
 
-    Time getEnd() const{
+    Time& getEnd() const{
         return end;
     }
 
