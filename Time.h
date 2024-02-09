@@ -8,7 +8,7 @@
 
 class Time {
 public:
-    Time(int h, int m, int s): hour(h), minute(m), second(s){}
+    Time(int h, int m): hour(h), minute(m){}
 
     int getHour() const{
         return hour;
@@ -26,20 +26,14 @@ public:
         minute = m;
     }
 
-    int getSecond() const{
-        return second;
-    }
 
-    void setSecond(int s){
-        second = s;
-    }
 
     void print() const{
-        std::cout << hour << ":" << minute << ":" << second << std::endl;
+        std::cout << hour << ":" << minute<< std::endl;
     }
 
     Time operator-(const Time& t) const{
-        return Time(hour - t.hour, minute - t.minute, second - t.second);
+        return Time(hour - t.hour, minute - t.minute);
     } //overloading così evito di usare 300 getter e setter e semplifico il codice
 
 
@@ -47,7 +41,6 @@ public:
 private:
     int hour;
     int minute;
-    int second;
 };
 
 

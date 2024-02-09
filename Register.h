@@ -10,14 +10,13 @@
 #include "Activity.h"
 class Register {
 public:
-    void addActivity(const Date& date, const Activity& activity);
+    void addActivity(Date& date, Activity& activity);
     void printDayActivities(const Date& day) const;
 
 private:
-    std::map<Date, Activity> activities; //mappa così posso ricercare per giorno
+    std::map<Date, Activity> activities; //mappa così posso salvare e ricercare per giorno
 
-    //TODO: implementare
-    //TODO: fare in modo di stampare in ordine di ora di inizio o fine
+    //TODO: implementare (fatto)
 };
 
 

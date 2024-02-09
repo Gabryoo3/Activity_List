@@ -16,6 +16,18 @@ public:
         }
         return false;
     }
+    inline bool operator<(const Date& other) const{
+        if(year < other.year || (year == other.year && month < other.month) || (year == other.year && month == other.month && day < other.day)){
+            return true;
+        }
+        return false;
+    }
+    inline bool operator==(const Date& other) const{
+        if(year == other.year && month == other.month && day == other.day){
+            return true;
+        }
+        return false;
+    }
     std::string printDate() const{
         std::string s = std::to_string(day) + "/" + std::to_string(month) + "/" + std::to_string(year);
         return s;

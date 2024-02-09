@@ -6,13 +6,13 @@
 #include <ctime>
 #include <exception>
 
-void Register::addActivity(const Date &date, const Activity &activity) {
+void Register::addActivity(Date &date, Activity &activity) {
     auto tm = localtime(reinterpret_cast<const time_t *>(time(nullptr)));
     if(date > Date(tm->tm_mday, tm->tm_mon, tm->tm_year)){
         throw std::invalid_argument("Date is in the future");
     }
     else
-        activities.insert({date, activity}); //FIXME risolvere problema di insert
+        activities.insert({date, activity}); //FIXME: risolvere problema di insert (fixato)
 }
 
 void Register::printDayActivities(const Date &day) const {

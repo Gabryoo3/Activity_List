@@ -11,7 +11,7 @@
 
 class Activity {
 public:
-    Activity(std::string& d, Time& s, Time& e): description(d), start(s), end(e){}
+    explicit Activity(std::string& d, Time& s, Time& e): description(d), start(s), end(e){}
 
     std::string getDescription() const{
         return description;
